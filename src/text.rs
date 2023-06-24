@@ -1,5 +1,5 @@
-use agb::display::bitmap3::Bitmap3;
 use agb::display;
+use agb::display::bitmap3::Bitmap3;
 
 use super::font::{CHARS, CHAR_IDX_OFFSET};
 

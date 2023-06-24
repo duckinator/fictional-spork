@@ -13,6 +13,7 @@ const CHAR_LIST: [char; 95] = [
 ];
 */
 
+#[rustfmt::skip]
 const MISSING_SYMBOL: Symbol = [
     //1,2,3,4,5,6,7
     0,1,0,1,0,1,0,1,
@@ -25,6 +26,7 @@ const MISSING_SYMBOL: Symbol = [
     1,0,1,0,1,0,1,0,
 ];
 
+#[rustfmt::skip]
 pub const CHARS: [Symbol; 95] = [
     // Space
     [0; 64],
@@ -412,4 +414,3 @@ pub const CHARS: [Symbol; 95] = [
     // ~
     MISSING_SYMBOL,
 ];
-
