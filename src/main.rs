@@ -19,7 +19,7 @@ use agb::syscall;
 pub mod font;
 
 pub mod text;
-use text::{putchar_at, print_at};
+use text::print_at;
 
 // The main function must take 1 arguments and never return. The agb::entry decorator
 // ensures that everything is in order. `agb` will call this after setting up the stack
@@ -28,20 +28,8 @@ use text::{putchar_at, print_at};
 fn main(mut gba: agb::Gba) -> ! {
     let mut bitmap = gba.display.video.bitmap3();
 
-    putchar_at(&mut bitmap, 0, 0, '!');
-    putchar_at(&mut bitmap, 0, 1, 'A');
     print_at(&mut bitmap, 1, 0, "Hello, world!");
-    /*putchar_at(&mut bitmap, 0, 0, 'H');
-    putchar_at(&mut bitmap, 0, 1, 'e');
-    putchar_at(&mut bitmap, 0, 0, 'l');
-    putchar_at(&mut bitmap, 0, 0, 'l');
-    putchar_at(&mut bitmap, 0, 0, 'o');*/
-    print_at(&mut bitmap, 2, 0, " !\"#$%&;()*+,-./0123456789:;<=>?@\nABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~");
-
-    /*for x in 0..display::WIDTH {
-        let y = x * display::HEIGHT / display::WIDTH;
-        bitmap.draw_point(x, y, 0x001F);
-    }*/
+    print_at(&mut bitmap, 4, 0, " !\"#$%&;()*+,-./:;<=>?@{|}~^_`[\\]\n\n0123456789\n\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n\nabcdefghijklmnopqrstuvwxyz");
 
     loop {
         syscall::halt();
