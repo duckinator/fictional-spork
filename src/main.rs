@@ -29,7 +29,7 @@ fn main(mut gba: agb::Gba) -> ! {
     let mut bitmap = gba.display.video.bitmap3();
 
     print_at(&mut bitmap, 1, 0, "Hello, world!");
-    print_at(&mut bitmap, 4, 0, " !\"#$%&;()*+,-./:;<=>?@{|}~^_`[\\]\n\n0123456789\n\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n\nabcdefghijklmnopqrstuvwxyz");
+    print_at(&mut bitmap, 4, 0, " !\"#$%&'()*+,-./:;<=>?@{|}~^_`[\\]\n\n0123456789\n\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n\nabcdefghijklmnopqrstuvwxyz");
 
     loop {
         syscall::halt();
